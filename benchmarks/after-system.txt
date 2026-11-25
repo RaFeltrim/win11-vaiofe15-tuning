@@ -1,0 +1,61 @@
+﻿======================================================================
+ WIN11 VAIO FE15 TUNING - AUDIT SNAPSHOT (AFTER-POST-REBOOT)
+ Timestamp: 2026-11-25 14:24:21 -03:00
+======================================================================
+
+--- [1] HARDWARE & OS ---
+Modelo       : Positivo Bahia - VAIO / VJFE59F11X-B1011H
+OS           : Microsoft Windows 11 Pro (Version 10.0.26200, Build 26200)
+CPU          : AMD Ryzen 7 5700U with Radeon Graphics (8C/16T, Load=77%)
+iGPU         : AMD Radeon(TM) Graphics | Driver=31.0.21923.11000 | Res=2560x1440@60Hz
+RAM          : Total=31.39 GB | Usada=14.65 GB (46.7%) | Livre=16.74 GB
+NVMe         : NVMe CL4-8D512 (NVMe) | Livre C:=102.29 GB / 475.89 GB
+Wi-Fi        : Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC | Link=325 Mbps | Status=Up
+
+--- [2] PROCESSOS, SERVICOS & BLOAT ---
+Processos Totais      : 309
+Servicos em Execucao  : 116
+Pacotes AppX          : 153
+Itens de Startup      : 16
+Opera GX              : 24 processos | 2995.7 MB RAM
+Processos AMD Radeon  : 4 processos | 70.2 MB RAM
+Windows Defender      : 574 MB RAM
+
+--- [3] ESTADO DE REGISTRO E TUNING ---
+Power Plan                 : GUID do Esquema de Energia: e14c12b4-4453-496f-9ecb-61861528cfc1  (Desempenho Máximo)
+GPU EnableUlps             : 0
+DWM OverlayTestMode (MPO)  : 5
+Gfx DisableOverlays (25H2) : 1
+Gfx TdrDelay               : 10
+Wi-Fi PnPCapabilities      : 24
+Wi-Fi bLeisurePs           : 0
+Wi-Fi DNS IPv4             : 1.1.1.1, 1.0.0.1
+MMCSS NetworkThrottlingIdx : 4294967295
+MMCSS SystemResponsiveness : 10
+RAM MemoryCompression      : 
+Service SysMain            : Stopped (Disabled)
+Service DiagTrack          : Stopped (Disabled)
+NVMe HiberbootEnabled      : 0
+
+--- [4] BENCHMARK DE LATENCIA & JITTER WI-FI (20 pacotes) ---
+Target=192.168.3.1 | Min=3ms | Avg=4.6ms | Max=23ms | Jitter=3ms | Lost=0/20
+Target=1.1.1.1 | Min=10ms | Avg=27ms | Max=59ms | Jitter=14.42ms | Lost=0/20
+
+--- [5] MICRO-BENCHMARK CPU SINGLE-THREAD (Primos ate 120.000) ---
+CPU Prime Bench (2..120000): 11301 primos em 18566 ms
+
+--- [6] TOP 10 PROCESSOS POR MEMORIA ---
+
+Name        Id MemMB
+----        -- -----
+node     14300 827,1
+chrome   17652 749,1
+chrome   18316   725
+chrome   18304 704,8
+opera    13644 623,8
+opera    16204   601
+MsMpEng   5796 576,2
+chrome   17660 574,1
+explorer  9664 462,3
+chrome   18200 375,4
+

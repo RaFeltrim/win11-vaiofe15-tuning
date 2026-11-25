@@ -1,0 +1,51 @@
+name: CI - Lint & Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate PowerShell syntax
+        shell: pwsh
+        run: |
+          $scripts = Get-ChildItem -Path "scripts" -Filter "*.ps1" -Recurse
+          foreach ($s in $scripts) {
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($s.FullName, [ref]$null, [ref]$errors) | Out-Null
+            if ($errors.Count -gt 0) {
+              Write-Error "Syntax errors in $($s.FullName): $($errors | Out-String)"
+              exit 1
+            }
+            Write-Host "[OK] $($s.Name)"
+          }
+
+      - name: Check required documentation files
+        shell: pwsh
+        run: |
+          $required = @(
+            "README.md",
+            "LICENSE",
+            "CHANGELOG.md",
+            "docs/01-seguranca-e-backups.md",
+            "docs/02-gpu-vega8-e-opera-gx.md",
+            "docs/03-cpu-ryzen7-5700u.md",
+            "docs/04-ram-32gb-ddr4.md",
+            "docs/05-rede-wifi-rtl8821ce.md",
+            "docs/06-armazenamento-nvme.md",
+            "docs/07-windows11-debloat.md"
+          )
+          foreach ($f in $required) {
+            if (-not (Test-Path $f)) {
+              Write-Error "Missing required file: $f"
+              exit 1
+            }
+            Write-Host "[OK] $f"
+          }

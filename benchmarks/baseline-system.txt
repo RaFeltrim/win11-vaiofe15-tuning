@@ -1,0 +1,61 @@
+﻿======================================================================
+ WIN11 VAIO FE15 TUNING - AUDIT SNAPSHOT (BASELINE)
+ Timestamp: 2026-11-25 14:10:45 -03:00
+======================================================================
+
+--- [1] HARDWARE & OS ---
+Modelo       : Positivo Bahia - VAIO / VJFE59F11X-B1011H
+OS           : Microsoft Windows 11 Pro (Version 10.0.26200, Build 26200)
+CPU          : AMD Ryzen 7 5700U with Radeon Graphics (8C/16T, Load=7%)
+iGPU         : AMD Radeon(TM) Graphics | Driver=31.0.21923.11000 | Res=2560x1440@60Hz
+RAM          : Total=31.39 GB | Usada=10.43 GB (33.2%) | Livre=20.96 GB
+NVMe         : NVMe CL4-8D512 (NVMe) | Livre C:=100.14 GB / 475.89 GB
+Wi-Fi        : Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC | Link=325 Mbps | Status=Up
+
+--- [2] PROCESSOS, SERVICOS & BLOAT ---
+Processos Totais      : 253
+Servicos em Execucao  : 121
+Pacotes AppX          : 168
+Itens de Startup      : 23
+Opera GX              : 23 processos | 2869.8 MB RAM
+Processos AMD Radeon  : 5 processos | 329.4 MB RAM
+Windows Defender      : 412.7 MB RAM
+
+--- [3] ESTADO DE REGISTRO E TUNING ---
+Power Plan                 : GUID do Esquema de Energia: e14c12b4-4453-496f-9ecb-61861528cfc1  (Desempenho Máximo)
+GPU EnableUlps             : 1
+DWM OverlayTestMode (MPO)  : 
+Gfx DisableOverlays (25H2) : 
+Gfx TdrDelay               : 
+Wi-Fi PnPCapabilities      : 16
+Wi-Fi bLeisurePs           : 2
+Wi-Fi DNS IPv4             : 192.168.3.1
+MMCSS NetworkThrottlingIdx : 4294967295
+MMCSS SystemResponsiveness : 20
+RAM MemoryCompression      : True
+Service SysMain            : Running (Automatic)
+Service DiagTrack          : Running (Automatic)
+NVMe HiberbootEnabled      : 1
+
+--- [4] BENCHMARK DE LATENCIA & JITTER WI-FI (20 pacotes) ---
+Target=192.168.3.1 | Min=2ms | Avg=3.8ms | Max=9ms | Jitter=2.05ms | Lost=0/20
+Target=1.1.1.1 | Min=15ms | Avg=19.8ms | Max=57ms | Jitter=8.47ms | Lost=0/20
+
+--- [5] MICRO-BENCHMARK CPU SINGLE-THREAD (Primos ate 120.000) ---
+CPU Prime Bench (2..120000): 11301 primos em 7055 ms
+
+--- [6] TOP 10 PROCESSOS POR MEMORIA ---
+
+Name               Id MemMB
+----               -- -----
+opera           19532 589,5
+explorer        10388 537,7
+MsMpEng          5992 411,3
+opera           22248 343,2
+opera           20100 332,4
+agy             17824 299,8
+Antigravity IDE 22204 289,8
+Antigravity IDE 14892 279,8
+opera            9956 253,3
+Antigravity IDE  3512 226,5
+

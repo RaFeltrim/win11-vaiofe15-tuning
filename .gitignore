@@ -1,0 +1,12 @@
+# Local backups & sensitive exports
+backups/
+*.reg
+*.log
+*.exe
+*.zip
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
